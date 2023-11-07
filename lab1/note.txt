@@ -1,0 +1,158 @@
+==================================================================================================
+                                    2nd OS LAB 26th July 
+==================================================================================================
+
+.name 		hidden files
+. 		    directory - working directory
+.. 		    directory - parent directory
+
+==================================================================================================
+
+ls -a 		all hidden files will show
+ls -l 		show the list in a long list format
+ls - lh 	file size in human readable format
+
+==================================================================================================
+
+ls -r 		    print the list in reverse order
+ls ~ 		    given the content of the home directory
+ls ../ 		    given content of the parent directory
+ls --version 	checks the version of the ls command 
+
+==================================================================================================
+
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -la
+total 8
+drwxr-xr-x  3 sayanpaul  staff   96 Jul 26 10:50 .              => current directory
+drwxr-xr-x  5 sayanpaul  staff  160 Jul 26 10:40 ..		        => parent directory
+-rw-r--r--@ 1 sayanpaul  staff  423 Jul 26 10:49 note.txt
+
+==================================================================================================
+
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -l
+total 8
+-rw-r--r--@ 1 sayanpaul  staff  423 Jul 26 10:48 note.txt
+
+==================================================================================================
+
+Chmod => change mode
+
+Owner(u)
+Group(g)
+Others(o)
+
++ 	: add permission
+-	: remove permission
+=	: setting to a particular specific value
+
+Read (r)
+Write (w)
+Execute (x)
+
+==================================================================================================
+
+chmod u+rwx [filename]
+chmod go-w [filename]
+chmod u+rw go+r [filename]
+
+------|-------|--------
+Owner | group | Others
+
+r w x
+0 0 0
+0 0 1
+0 1 0
+. . .
+. . .
+total 7 options for each Owner group and Others
+like : chmod 724 === chmod rwx w r 
+a => all users
+
+==================================================================================================
+
+sayanpaul@Sayans-MacBook-Air osLabSem5 % chmod 777 note.txt 
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -la
+total 8
+drwxr-xr-x  3 sayanpaul  staff    96 Jul 26 10:58 .
+drwxr-xr-x  5 sayanpaul  staff   160 Jul 26 10:40 ..
+-rwxrwxrwx@ 1 sayanpaul  staff  2098 Jul 26 11:05 note.txt
+sayanpaul@Sayans-MacBook-Air osLabSem5 % chmod 744 note.txt 
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -la
+total 8
+drwxr-xr-x  3 sayanpaul  staff    96 Jul 26 10:58 .
+drwxr-xr-x  5 sayanpaul  staff   160 Jul 26 10:40 ..
+-rwxr--r--@ 1 sayanpaul  staff  2098 Jul 26 11:05 note.txt
+sayanpaul@Sayans-MacBook-Air osLabSem5 % chmod o+rw note.txt 
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -la
+total 8
+drwxr-xr-x  3 sayanpaul  staff    96 Jul 26 10:58 .
+drwxr-xr-x  5 sayanpaul  staff   160 Jul 26 10:40 ..
+-rwxr--rw-@ 1 sayanpaul  staff  2098 Jul 26 11:05 note.txt
+sayanpaul@Sayans-MacBook-Air osLabSem5 % chmod u-x note.txt
+sayanpaul@Sayans-MacBook-Air osLabSem5 % ls -la            
+total 8
+drwxr-xr-x  3 sayanpaul  staff    96 Jul 26 10:58 .
+drwxr-xr-x  5 sayanpaul  staff   160 Jul 26 10:40 ..
+-rw-r--rw-@ 1 sayanpaul  staff  2098 Jul 26 11:05 note.txt
+
+
+==================================================================================================
+                                    3rd OS LAB 2nd August 
+==================================================================================================
+
+ps      =>  pid tty time cmd 
+            process id , terminal information, time , command (bash)
+==================================================================================================
+sayanpaul@Sayans-MacBook-Air ~ % ps
+  PID TTY           TIME CMD
+22072 ttys000    0:00.01 -zsh
+sayanpaul@Sayans-MacBook-Air ~ % 
+==================================================================================================
+ps -ef
+uid pid ppid stat start     => man ps to use command
+user id, process id, parent process id, ..
+==================================================================================================
+            process creation
+man fork => fork() is a system call that generate child process
+fork(): 0   => child process
+        >0  => parent process
+        <0  => error
+==================================================================================================
+#include<stdio.h>
+#include<sys/types.h>
+
+int main(){
+    pid_t process_id;
+    process_id = fork();
+    if(process_id ==0 ){
+        printf("I am from child process, having pid: %d and ppid: %d \n", getpid(),getppid());     // child block
+    }
+    else
+    {
+        printf("I am from parent process, having ppid: %d and parent ppid: %d \n\n", getppid(),getppid());     // parent block
+    }
+}
+==================================================================================================
+#include<stdio.h>
+#include<sys/types.h>
+
+int main(){
+    pid_t process_id;
+    process_id = fork();
+    if(process_id ==0 ){
+        for(;;){}
+    }
+    else
+    {
+        for(;;){}
+    }
+}
+
+=>  to run it without hampering infinite loop
+test.c 
+gcc test.c 
+./a.out &
+
+
+
+

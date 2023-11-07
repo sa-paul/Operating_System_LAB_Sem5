@@ -1,0 +1,26 @@
+Parent process created
+PID: 41597, PPID: 41594, Timestamp: Wed Aug  9 00:47:19 2023
+Parent process created
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41598, PPID: 41594, Timestamp: Wed Aug  9 00:47:19 2023
+Parent process created
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41599, PPID: 41594, Timestamp: Wed Aug  9 00:47:19 2023
+Parent process created
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41601, PPID: 41594, Timestamp: Wed Aug  9 00:47:19 2023
+Parent process created
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41600, PPID: 41594, Timestamp: Wed Aug  9 00:47:19 2023
+Parent process created
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
+PID: 41594, PPID: 41576, Timestamp: Wed Aug  9 00:47:19 2023
